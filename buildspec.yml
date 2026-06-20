@@ -18,8 +18,8 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - echo Pushing the Docker images to ECR...
-      - docker push $REPOSITORY_URI:latest
+      - echo Pushing the Docker image to ECR...
+      # REMOVED the docker push $REPOSITORY_URI:latest line
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
       - printf '[{"name":"%s","imageUri":"%s"}]' "$ECR_REPO_NAME" "$REPOSITORY_URI:$IMAGE_TAG" > imagedefinitions.json
