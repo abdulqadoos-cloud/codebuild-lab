@@ -1,5 +1,4 @@
-# Use an official Node runtime as a parent image
-FROM node:18-alpine
+FROM public.ecr.aws/docker/library/node:18-alpine
 
 # Set the working directory
 WORKDIR /usr/src/app
